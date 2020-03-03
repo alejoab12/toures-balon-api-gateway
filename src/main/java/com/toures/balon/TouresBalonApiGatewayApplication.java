@@ -23,7 +23,7 @@ public class TouresBalonApiGatewayApplication {
 	}
 	@PostConstruct
 	public void init() {
-		logger.warn(Objects.toString(props));
+		System.out.println("Propiedades:"+Objects.toString(props));
 	}
 
 }
