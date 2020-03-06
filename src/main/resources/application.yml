@@ -7,6 +7,11 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
 spring:
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://localhost:9411/
   profiles:
     active:
     - dev
@@ -15,7 +20,9 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: toures-balon-api-gateway-test
-        uri: lb://TOURES-BALON-API-GATEWAY-TEST
+      - id: toures-balon-usuario-routes
+        uri: lb://TOURES-BALON-USUARIO
         predicates:
-        - Path=/test/**
+        - Path=/usuario/**
+ 
+  
