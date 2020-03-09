@@ -24,5 +24,27 @@ spring:
         uri: lb://TOURES-BALON-USUARIO
         predicates:
         - Path=/usuario/**
- 
-  
+      - id: toures-balon-oauth
+        uri: lb://TOURES-BALON-OAUTH
+        predicates:
+        - Path=/oauth/**
+oauth:
+  enabled: true
+  jwt:
+    issuer: angular
+    password: 123456789
+    exclude-matchers:
+    - method: POST
+      paths:
+      - /oauth/token
+    matchers-with-role:
+    - method: GET
+      paths:
+      - \/usuario.*
+      roles:
+        - ROLE_ADMIN
+    - method: POST
+      paths:
+      - \/usuario.*
+      roles:
+        - ROLE_ADMIN
