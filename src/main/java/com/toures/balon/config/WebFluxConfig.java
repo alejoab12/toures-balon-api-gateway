@@ -15,7 +15,6 @@ public class WebFluxConfig implements WebFluxConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        System.out.println("ENTRO A ESTA MIERDA");
         registry.addMapping("/**")
                 .allowCredentials(true)
                 .allowedOrigins("*")
