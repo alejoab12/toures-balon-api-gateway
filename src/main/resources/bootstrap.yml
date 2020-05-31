@@ -4,4 +4,4 @@ spring:
   profiles: prod
   cloud:
     config:
-      uri: toures-balon-config-server-service:8888
+      uri: 192.168.0.6:8888
