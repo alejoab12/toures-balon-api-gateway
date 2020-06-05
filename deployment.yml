@@ -1,0 +1,22 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  namespace: toures-balon-prod
+  name: toures-balon-api-gateway-deployment
+  labels:
+    app: toures-balon-api-gateway
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: toures-balon-api-gateway
+  template:
+    metadata:
+      labels:
+        app: toures-balon-api-gateway
+    spec:
+      containers:
+        - name: toures-balon-api-gateway
+          image: alejoab12/toures-balon-api-gateway
+          ports:
+            - containerPort: 8090
