@@ -1,7 +1,6 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  namespace: toures-balon-prod
   name: toures-balon-api-gateway-deployment
   labels:
     app: toures-balon-api-gateway
